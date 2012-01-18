@@ -1,140 +1,149 @@
 <!doctype html>
-<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
-<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
-<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<!--[if lt IE 7]>
+<html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en"> <!--<![endif]-->
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
 
-  <title>Status</title>
-  <meta name="description" content="">
-  <meta name="author" content="">
+    <title>Status</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
 
-  <!-- CSS concatenated and minified via ant build script-->
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/layout.css">
-  <!-- end CSS-->
+    <!-- CSS concatenated and minified via ant build script-->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <!-- end CSS-->
 
-  <!--  <script src="js/libs/modernizr-2.0.6.min.js"></script> -->
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.6.2.min.js"><\/script>')</script>
-  <script type="text/javascript" src="js/jquery.marquee.js"></script>
-  <script type="text/javascript" src="js/jquery.tweet.js"></script>
-  <script type="text/javascript" src="js/jquery.timers.js"></script>
-  <script type="text/javascript" src="http://use.typekit.com/rix7ycn.js"></script>
-  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-  <script type="text/javascript" src="js/date.js"></script>
-  <script type="text/javascript" src="js/readNagios.js"></script>
+    <!--  <script src="js/libs/modernizr-2.0.6.min.js"></script> -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')</script>
+    <script type="text/javascript" src="js/jquery.marquee.js"></script>
+    <script type="text/javascript" src="js/jquery.tweet.js"></script>
+    <script type="text/javascript" src="js/jquery.timers.js"></script>
+    <script type="text/javascript" src="http://use.typekit.com/thm7lta.js"></script>
+    <script type="text/javascript">try {
+        Typekit.load();
+    } catch(e) {
+    }</script>
+    <script type="text/javascript" src="js/date.js"></script>
+    <script type="text/javascript" src="js/readNagios.js"></script>
 
 </head>
 
 <body>
 
-  <div id="main" role="main">
+<div id="main" role="main">
     <div id="charts" class="charts">
-      <div id="chartA" class="chart">
-        <div class='columnContainer' id='columnContainer_1'>
-        <div class='columnHeader'><span class='header_A'>1</span>/<span class='header_B'>2</span></div>
-        <div class='column' id='column_1' style="height: 0px"></div>
-        <div class='columnTitle'>Unix</div>
-      </div>
-      <div class='columnContainer' id='columnContainer_2'>
-        <div class='columnHeader'><span class='header_A'>1</span>/<span class='header_B'>4</span></div>
-        <div class='column' id='column_2' style="height: 0px"></div>
-        <div class='columnTitle'>Helpdesk</div>
-      </div>
-      <div class='columnContainer' id='columnContainer_3'>
-        <div class='columnHeader'><span class='header_A'>1</span>/<span class='header_B'>7</span></div>
-        <div class='column' id='column_3' style="height: 0px"></div>
-        <div class='columnTitle'>Comms</div>
-      </div>
-      <div class='columnContainer' id='columnContainer_4'>
-        <div class='columnHeader'><span class='header_A'>1</span>/<span class='header_B'>3</span></div>
-        <div class='column' id='column_4' style="height: 0px"></div>
-        <div class='columnTitle'>Apps</div>
-      </div>
-      <div class='columnContainer' id='columnContainer_5'>
-        <div class='columnHeader'><span class='header_A'>1</span>/<span class='header_B'>1</span></div>
-        <div class='column' id='column_5' style="height: 40px"></div>
-        <div class='columnTitle'>Networking</div>
-      </div>
+        <div id="chartA" class="chart">
+            <div class='columnContainer' id='columnContainer_1'>
+                <div class='columnHeader'><span class='header_A'>1</span>/<span class='header_B'>2</span></div>
+                <div class='column' id='column_1' style="height: 0px"></div>
+                <div class='columnTitle'>Unix</div>
+            </div>
+            <div class='columnContainer' id='columnContainer_2'>
+                <div class='columnHeader'><span class='header_A'>1</span>/<span class='header_B'>4</span></div>
+                <div class='column' id='column_2' style="height: 0px"></div>
+                <div class='columnTitle'>Helpdesk</div>
+            </div>
+            <div class='columnContainer' id='columnContainer_3'>
+                <div class='columnHeader'><span class='header_A'>1</span>/<span class='header_B'>7</span></div>
+                <div class='column' id='column_3' style="height: 0px"></div>
+                <div class='columnTitle'>Comms</div>
+            </div>
+            <div class='columnContainer' id='columnContainer_4'>
+                <div class='columnHeader'><span class='header_A'>1</span>/<span class='header_B'>3</span></div>
+                <div class='column' id='column_4' style="height: 0px"></div>
+                <div class='columnTitle'>Apps</div>
+            </div>
+            <div class='columnContainer' id='columnContainer_5'>
+                <div class='columnHeader'><span class='header_A'>1</span>/<span class='header_B'>1</span></div>
+                <div class='column' id='column_5' style="height: 40px"></div>
+                <div class='columnTitle'>Networking</div>
+            </div>
+        </div>
     </div>
-  </div>
-  <div id="stats">
-    <ul>
-      <li id="serviceGmail">GMAIL</li>
-      <li id="serviceCalendar">Calendar</li>
-      <li id="serviceCIES">CIES</li>
-      <li id="serviceCAS">CAS</li>
-      <li id="servicePortal">Portal</li>
-      <li id="serviceuReports">uReports</li>
-      <li id="serviceMOLE2">MOLE2</li>
-      <li id="serviceWebsite">Website</li>
-      <li id="serviceuSpace">uSpace</li>
-      <li id="serviceSearch">Search</li>
-      <li id="serviceCMS">CMS2</li>
-    </ul>
-  </div>
-  <div id="lastUpdated">Updating...</div>
-  <div id="comingup">
-    <b>Updating...</b>
-  </div>
-  <div id="highlights">
-    <div class="highlight highlightGradiant" id="highlight1">
-	  <div class="highlightHeader">Highlight 1</div>
-	  <div class="highlightContent">&nbsp;</div>
+    <div id="stats">
+        <ul>
+            <li id="serviceGmail">GMAIL</li>
+            <li id="serviceCalendar">Calendar</li>
+            <li id="serviceCIES">CIES</li>
+            <li id="serviceCAS">CAS</li>
+            <li id="servicePortal">Portal</li>
+            <li id="serviceuReports">uReports</li>
+            <li id="serviceMOLE2">MOLE2</li>
+            <li id="serviceWebsite">Website</li>
+            <li id="serviceuSpace">uSpace</li>
+            <li id="serviceSearch">Search</li>
+            <li id="serviceCMS">CMS2</li>
+        </ul>
     </div>
-    <div class="highlight highlightGradiant" id="highlight2">
-      <div class="highlightHeader">Highlight 2</div>
-      <div class="highlightContent">Banana</div>
+    <div id="lastUpdated">Updating...</div>
+    <div id="comingup">
+        <b>Updating...</b>
     </div>
-    <div class="highlight" id="calendar">
-      <div id="calendarDate" class="highlightHeader red">Tuesday 15/11</div>
-      <div class="highlightContent">&nbsp;
-      	<table class="calendar">
-	      <tr>
-		    <td class="date">15/11</td>
-		    <td class="event">MOLE2 update</td>
-		  </tr>
-		  <tr>
-			<td class="date">15/11</td>
-			<td class="event">CMS reboot</td>
-		  </tr>
-		  <tr>
-			<td class="date">15/11</td>
-			<td class="event">Other stuff</td>
-		  </tr>
-		</table>
-      </div>
+    <div id="highlights">
+        <div class="highlight highlightGradiant" id="highlight1">
+            <div class="highlightHeader">Highlight 1</div>
+            <div class="highlightContent">&nbsp;</div>
+        </div>
+        <div class="highlight highlightGradiant" id="highlight2">
+            <div class="highlightHeader">Highlight 2</div>
+            <div class="highlightContent">Banana</div>
+        </div>
+        <div class="highlight" id="calendar">
+            <div id="calendarDate" class="highlightHeader red">Tuesday 15/11</div>
+            <div class="highlightContent">&nbsp;
+                <table class="calendar">
+                    <tr>
+                        <td class="date">15/11</td>
+                        <td class="event">MOLE2 update</td>
+                    </tr>
+                    <tr>
+                        <td class="date">15/11</td>
+                        <td class="event">CMS reboot</td>
+                    </tr>
+                    <tr>
+                        <td class="date">15/11</td>
+                        <td class="event">Other stuff</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
     </div>
-  </div>
-  <div id="tickers">
-    <marquee behavior="scroll" scrollamount="4" direction="left" id="ticker1" class="ticker">
-      <div class="cicsstatus"></div>
-    </marquee>
-    <marquee behavior="scroll" scrollamount="7" direction="left" id="ticker2" class="ticker">
-      <div class="tweet"></div>
-    </marquee>
-  </div>
-  </div>
- 
+    <div id="tickers">
+        <marquee behavior="scroll" scrollamount="4" direction="left" id="ticker1" class="ticker">
+            <div class="cicsstatus"></div>
+        </marquee>
+        <marquee behavior="scroll" scrollamount="7" direction="left" id="ticker2" class="ticker">
+            <div class="tweet"></div>
+        </marquee>
+    </div>
+</div>
+
 <!-- <script type="text/javascript">
     $('marquee').marquee();
-  </script> --> 
+  </script> -->
 
-  <!-- scripts concatenated and minified via ant build script-->
-  <script defer src="js/plugins.js"></script>
-  <script defer src="js/script.js"></script>
-  <!-- end scripts-->
+<!-- scripts concatenated and minified via ant build script-->
+<script defer src="js/plugins.js"></script>
+<script defer src="js/script.js"></script>
+<!-- end scripts-->
 
-  <!--[if lt IE 7 ]>
-    <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
-    <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
-  <![endif]-->
-  
+<!--[if lt IE 7 ]>
+<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+<script>window.attachEvent('onload', function() {
+    CFInstall.check({mode:'overlay'})
+})</script>
+<![endif]-->
+
 </body>
 </html>
