@@ -16,7 +16,7 @@ function updateGoogleCalendar() {
     var out = '';
 
     $
-        .getJSON('http://www.google.com/calendar/feeds/sheffield.ac.uk_5i8cmsq79qd3nm5spk9ftkol0k@group.calendar.google.com/public/full?alt=json-in-script&callback=?&orderby=starttime&max-results=5&singleevents=true&sortorder=ascending&futureevents=true', function (data) {
+        .getJSON('http://www.google.com/calendar/feeds/agent.ru_h5u4e6ia2r1b9bvmhah7ca6nog%40group.calendar.google.com/public/full?alt=json-in-script&orderby=starttime&max-results=5&singleevents=true&sortorder=ascending&futureevents=true&callback=?', function (data) {
         $.each(data["feed"]["entry"], function(value, data) {
             var calDate = new Date(data["gd$when"][0]["startTime"]);
             if (isNaN(calDate.valueOf())) {
@@ -136,8 +136,8 @@ $(document).ready(function () {
     }, "text")
     //  updateNagios();
 //  setInterval( updateNagios, 5*1000 );
-//    updateGoogleCalendar();
-//    setInterval(updateGoogleCalendar, 900 * 1000);
+    updateGoogleCalendar();
+    setInterval(updateGoogleCalendar, 900 * 1000);
 //  updateSignificantEvent();
 //  setInterval( updateSignificantEvent,900*1000);
 //  updateTwitter();
