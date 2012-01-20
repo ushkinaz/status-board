@@ -1,3 +1,9 @@
+const CALENDAR_BASE = 'http://www.google.com/calendar/feeds/';
+const CALENDAR_JSON = '/public/full?alt=json-in-script&orderby=starttime&singleevents=true&sortorder=ascending&futureevents=true&callback=?';
+
+const DEV_CALENDAR = 'agent.ru_h5u4e6ia2r1b9bvmhah7ca6nog%40group.calendar.google.com';
+const SIGNIFICANT_CALENDAR = 'agent.ru_rfced10de8cbh9juug1vvjpjss@group.calendar.google.com';
+
 function updateNagios() {
     $.getJSON('/vshell/index.php?type=services&mode=json', function(data) {
         $.each(data, function () {
@@ -16,8 +22,11 @@ function updateGoogleCalendar() {
     var out = '';
 
     $
-        .getJSON('http://www.google.com/calendar/feeds/agent.ru_h5u4e6ia2r1b9bvmhah7ca6nog%40group.calendar.google.com/public/full?alt=json-in-script&orderby=starttime&max-results=5&singleevents=true&sortorder=ascending&futureevents=true&callback=?', function (data) {
+        .getJSON(CALENDAR_BASE + DEV_CALENDAR + CALENDAR_JSON + '&max-results=1', function (data) {
         $.each(data["feed"]["entry"], function(value, data) {
+            if (data["title"]["$t"] == "Daily standup") {
+                return;
+            }
             var calDate = new Date(data["gd$when"][0]["startTime"]);
             if (isNaN(calDate.valueOf())) {
                 calDate = Date.parseExact(data["gd$when"][0]["startTime"], "yyyy-MM-dd");
@@ -40,7 +49,7 @@ function updateGoogleCalendar() {
 
     $('#calendarDate').empty();
     today = new Date();
-    $('#calendarDate').append(weekday[today.getDay()] + " " + today.getDate() + "/" + today.getMonth());
+    $('#calendarDate').append(weekday[today.getDay()] + " " + today.getDate() + "/" + (today.getMonth() + 1));
 }
 
 function updateSignificantEvent() {
@@ -48,8 +57,7 @@ function updateSignificantEvent() {
 
     var out = '';
 
-    $
-        .getJSON('http://www.google.com/calendar/feeds/sheffield.ac.uk_8v8avojjrlk1lot2lkpl47fn0k@group.calendar.google.com/public/full?alt=json-in-script&callback=?&orderby=starttime&max-results=1&singleevents=true&sortorder=ascending&futureevents=true', function (data) {
+    $.getJSON('http://www.google.com/calendar/feeds/' + SIGNIFICANT_CALENDAR + CALENDAR_JSON + '&max-results=1', function (data) {
         entry = data["feed"]["entry"][0];
         var calDate = new Date(entry["gd$when"][0]["startTime"]);
         if (isNaN(calDate.valueOf())) {
@@ -61,16 +69,16 @@ function updateSignificantEvent() {
         todayDate = new Date();
         days = Math.floor((calDate.valueOf() - todayDate.valueOf()) / 1000 / 3600 / 24);
         if (days < 1) {
-            remaining = "today";
+            remaining = "сегодня";
         }
         else if (days == 1) {
-            remaining = "tomorrow";
+            remaining = "завтра";
         }
         else {
-            remaining = "in " + days + " days";
+            remaining = "через " + days + " дней";
         }
         outString = entry["title"]["$t"].replace(/(SIGNIFICANT: )([^-]+ - )(.+)/, "$3");
-        $('#comingup').append("Major work to <b>" + outString + "</b> " + remaining + "\n");
+        $('#comingup').append("Работаем над <b>" + outString + "</b> " + remaining + "\n");
     })
 }
 
@@ -131,15 +139,15 @@ function updateGraphs() {
 
 
 $(document).ready(function () {
-    $.get('/teamcity/httpAuth/app/rest/builds/name:Dev', function(data) {
+    $.getJSON('/teamcity/httpAuth/app/rest/builds/name:Dev?callback=?', function(data) {
         alert(data)
     }, "text")
     //  updateNagios();
 //  setInterval( updateNagios, 5*1000 );
     updateGoogleCalendar();
     setInterval(updateGoogleCalendar, 900 * 1000);
-//  updateSignificantEvent();
-//  setInterval( updateSignificantEvent,900*1000);
+    updateSignificantEvent();
+    setInterval(updateSignificantEvent, 900 * 1000);
 //  updateTwitter();
 //  setInterval( updateTwitter, 300*1000);
 //  updateGraphs();
