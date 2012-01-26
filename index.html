@@ -61,43 +61,44 @@
             </div>
             <div class='columnContainer' id='columnContainer_4'>
                 <div class='columnHeader'><span class='header_A'>1</span>/<span class='header_B'>3</span></div>
-                <div class='column' id='column_4' style="height: 0px"></div>
+                <div class='column' id='column_4' style="height: 20px"></div>
                 <div class='columnTitle'>Apps</div>
             </div>
             <div class='columnContainer' id='columnContainer_5'>
                 <div class='columnHeader'><span class='header_A'>1</span>/<span class='header_B'>1</span></div>
-                <div class='column' id='column_5' style="height: 40px"></div>
+                <div class='column' id='column_5' style="height: 20px"></div>
                 <div class='columnTitle'>Networking</div>
             </div>
         </div>
     </div>
     <div id="stats">
         <ul>
-            <li id="serviceGmail">GMAIL</li>
-            <li id="serviceCalendar">Calendar</li>
-            <li id="serviceCIES">CIES</li>
-            <li id="serviceCAS">CAS</li>
-            <li id="servicePortal">Portal</li>
-            <li id="serviceuReports">uReports</li>
-            <li id="serviceMOLE2">MOLE2</li>
-            <li id="serviceWebsite">Website</li>
-            <li id="serviceuSpace">uSpace</li>
-            <li id="serviceSearch">Search</li>
-            <li id="serviceCMS">CMS2</li>
+            <!--<li id="service-gmail">GMAIL</li>-->
+            <!--<li id="service-calendar">Calendar</li>-->
+            <li id="service-abra" class="statusOK">abra</li>
+            <li id="service-gamayun" class="statusCRITICAL">gamayun</li>
+            <li id="service-krabby" class="statusWARNING">krabby</li>
+            <li id="serviceu-psyduck">psyduck</li>
+            <li id="service-simurgh">simurgh</li>
+            <li id="service-swinub">swinub</li>
+            <li id="serviceu-tsimurgh">tsimurgh</li>
+            <li id="service-watchdog">watchdog</li>
+            <li id="service-yandexws">yandexws</li>
+            <li id="service-zubat">zubat</li>
         </ul>
     </div>
-    <div id="lastUpdated">Updating...</div>
+    <div id="lastUpdated">&nbsp;</div>
     <div id="comingup">
         <b>Updating...</b>
     </div>
     <div id="highlights">
         <div class="highlight highlightGradiant" id="highlight1">
-            <div class="highlightHeader">Highlight 1</div>
-            <div class="highlightContent">&nbsp;</div>
+            <div class="highlightHeader">Важное</div>
+            <div class="highlightContent">Печеньки на кухне</div>
         </div>
         <div class="highlight highlightGradiant" id="highlight2">
-            <div class="highlightHeader">Highlight 2</div>
-            <div class="highlightContent">Banana</div>
+            <div class="highlightHeader">Тоже важное</div>
+            <div class="highlightContent">2 банана и собака</div>
         </div>
         <div class="highlight" id="calendar">
             <div id="calendarDate" class="highlightHeader red">Tuesday 15/11</div>
@@ -120,18 +121,22 @@
         </div>
     </div>
     <div id="tickers">
+<!--
         <marquee behavior="scroll" scrollamount="4" direction="left" id="ticker1" class="ticker">
             <div class="cicsstatus"></div>
         </marquee>
+-->
         <marquee behavior="scroll" scrollamount="7" direction="left" id="ticker2" class="ticker">
             <div class="tweet"></div>
         </marquee>
     </div>
 </div>
 
-<!-- <script type="text/javascript">
+<!--
+ <script type="text/javascript">
     $('marquee').marquee();
-  </script> -->
+  </script>
+-->
 
 <!-- scripts concatenated and minified via ant build script-->
 <script defer src="js/plugins.js"></script>

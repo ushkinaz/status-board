@@ -124,6 +124,7 @@ table.calendar {
 .highlightContent {
 	text-align: left;
 	font-size: 14pt;
+    padding: 0.5em;
 }
 
 #comingup {
@@ -158,6 +159,10 @@ table.calendar {
 	margin: 0;
 	padding: 0;
 	text-align: left;
+}
+
+#stats a {
+    text-decoration: none;
 }
 
 #stats li {

@@ -22,7 +22,7 @@ function updateGoogleCalendar() {
     var out = '';
 
     $
-        .getJSON(CALENDAR_BASE + DEV_CALENDAR + CALENDAR_JSON + '&max-results=1', function (data) {
+        .getJSON(CALENDAR_BASE + DEV_CALENDAR + CALENDAR_JSON + '&max-results=10', function (data) {
         $.each(data["feed"]["entry"], function(value, data) {
             if (data["title"]["$t"] == "Daily standup") {
                 return;
@@ -39,13 +39,13 @@ function updateGoogleCalendar() {
     })
 
     var weekday = new Array(7);
-    weekday[0] = "Sunday";
-    weekday[1] = "Monday";
-    weekday[2] = "Tuesday";
-    weekday[3] = "Wednesday";
-    weekday[4] = "Thursday";
-    weekday[5] = "Friday";
-    weekday[6] = "Saturday";
+    weekday[0] = "Воскресенье";
+    weekday[1] = "Понедельник";
+    weekday[2] = "Вторник";
+    weekday[3] = "Среда";
+    weekday[4] = "Четверг";
+    weekday[5] = "Пятница";
+    weekday[6] = "Суббота";
 
     $('#calendarDate').empty();
     today = new Date();
@@ -57,7 +57,8 @@ function updateSignificantEvent() {
 
     var out = '';
 
-    $.getJSON('http://www.google.com/calendar/feeds/' + SIGNIFICANT_CALENDAR + CALENDAR_JSON + '&max-results=1', function (data) {
+    $
+        .getJSON('http://www.google.com/calendar/feeds/' + SIGNIFICANT_CALENDAR + CALENDAR_JSON + '&max-results=1', function (data) {
         entry = data["feed"]["entry"][0];
         var calDate = new Date(entry["gd$when"][0]["startTime"]);
         if (isNaN(calDate.valueOf())) {
@@ -78,7 +79,7 @@ function updateSignificantEvent() {
             remaining = "через " + days + " дней";
         }
         outString = entry["title"]["$t"].replace(/(SIGNIFICANT: )([^-]+ - )(.+)/, "$3");
-        $('#comingup').append("Работаем над <b>" + outString + "</b> " + remaining + "\n");
+        $('#comingup').append("<b>" + outString + "</b> " + remaining + "\n");
     })
 }
 
@@ -148,8 +149,8 @@ $(document).ready(function () {
     setInterval(updateGoogleCalendar, 900 * 1000);
     updateSignificantEvent();
     setInterval(updateSignificantEvent, 900 * 1000);
-//  updateTwitter();
-//  setInterval( updateTwitter, 300*1000);
+    updateTwitter();
+    setInterval(updateTwitter, 300 * 1000);
 //  updateGraphs();
 //  setInterval( updateGraphs, 5*1000 );
 })
